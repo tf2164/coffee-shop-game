@@ -1,0 +1,257 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  background: #f0f0f0;
+}
+
+
+.game-container {
+  position: absolute;
+  top: 50%; /* Adjust the vertical position */
+  left: 50%; /* Adjust the horizontal position */
+  transform: translate(-50%, -50%);
+  z-index: 1; /* Ensure the game board appears above the cup */
+}
+
+.options {
+  width: 200px; /* Adjust the width as needed */
+  height: 300px; /* Adjust the height as needed */
+  background-color: #ccc; /* Set the background color */
+  position: absolute;
+  left: 145%; /* Adjust the right distance from the cup */
+  top: 50px; /* Adjust the top position */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px; /* Add padding for spacing */
+}
+
+.cap-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.foam {
+  position: absolute;
+  height: 85px;
+  width: 420px;
+  top: 20px;
+  left: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #634b3b 0, #634b3b 90%, transparent 100%);
+  box-shadow: 0 0 25px #bfaca0;
+  z-index: 1;
+  animation-delay: 15s !important;
+  animation: mycontanimation 9s forwards;
+}
+
+.mug {
+  position: relative;
+  height: 345px;
+  width: 470px;
+  margin: auto;
+  padding-top: 100px;
+  background: linear-gradient(to left, #ddd 0, white 100%);
+  background-color: white;
+  border-top-left-radius: 50px 150px; /* Larger top-left radius */
+  border-top-right-radius: 50px 150px; /* Larger top-right radius */
+  border-bottom-left-radius: 50px 50px; /* Smaller bottom-left radius */
+  border-bottom-right-radius: 50px 100px;
+  border-radius: 60% 60% 60% 60% / 30% 20% 60% 60%;
+  transform: perspective(500px) rotateX(-5deg) translateY(-50px);
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+  z-index: 0;
+  transition: transform 0.5s ease-in-out;
+  animation-delay: 15s !important;
+  animation: myanimation 9s forwards;
+}
+
+
+
+/* cup animated */
+@keyframes myanimation {
+    from {  
+        position: relative;
+        height: 345px;
+        width: 470px;
+        margin: auto;
+        padding-top: 100px;
+        background: linear-gradient(to left, #ddd 0, white 100%);
+        background-color: white;
+        border-top-left-radius: 50px 150px; 
+        border-top-right-radius: 50px 150px; 
+        border-bottom-left-radius: 50px 50px; 
+        border-bottom-right-radius: 50px 100px;
+        border-radius: 60% 60% 60% 60% / 30% 20% 60% 60%;
+        /* transform: perspective(500px) rotateX(-5deg) translateY(-0px); */
+    }
+    to { 
+        position: relative;
+        height: 465px;
+        width: 479px;
+        margin: auto;
+        padding-top: 100px;
+        background: linear-gradient(to left, #ddd 0, white 100%);
+        background-color: white;
+        border-top-left-radius: 370px 170px;
+        border-top-right-radius: 250px 170px; 
+        border-bottom-left-radius: 50px 50px; 
+        border-bottom-right-radius: 50px 50px;
+        border-radius: 210% 200% 220% 210% / 225% 225% 250% 210%;
+    }
+  }
+
+
+
+/* coffee liquid animated */
+
+  @keyframes mycontanimation {
+    from {  
+        position: absolute;
+        height: 85px;
+        width: 420px;
+        top: 20px;
+        left: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #503d30 0, #503d30 90%, transparent 100%);
+        box-shadow: 0 0 25px #aa7b5a ;
+        z-index: 1;
+        
+        }
+
+    to {
+        position: absolute;
+        height: 415px;
+        width: 420px;
+        top: 20px;
+        left: 30px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #503d30 , #503d30 300%);
+        box-shadow: 0 0 25px #aa7b5a;
+        z-index: 1;
+        
+    }
+
+
+  }
+
+
+  /* handle animated */
+
+  @keyframes mycont2animation {
+    from {  
+        position: absolute;
+        height: 180px;
+        width: 170px;
+        top: 110px;
+        left: -115.5px;
+        border-top-left-radius: 110px 90px; 
+        border-bottom-left-radius: 150px 150px; 
+        border-top-right-radius: 90px 100px;
+        border-bottom-right-radius: 75px 10px;
+        background: linear-gradient(to left, #eee 0, white 100%);
+        background-color: white;
+        z-index: 1;
+    }
+
+    to {
+        position: absolute;
+        height: 40px;
+        width: 170px;
+        top: 250px;
+        left: -155.5px;
+        border-top-left-radius: 110px 90px; 
+        border-bottom-left-radius: 150px 150px; 
+        border-top-right-radius: 90px 100px;
+        border-bottom-right-radius: 75px 10px;
+        background: linear-gradient(to left, #eee 0, white 100%);
+        background-color: white;
+        z-index: 1;
+    }
+  }
+
+
+
+  /* inside handle animated */
+  @keyframes mycont3animation {
+    from { 
+        content: "";
+        position: absolute;
+        height: 130px;
+        width: 90px;
+        top: 27px;
+        right: 20px;
+        border-top-left-radius: 45px 55px; /* Round top-left radius */
+        border-bottom-left-radius: 65px 85px; /* Round bottom-left radius */
+        border-top-right-radius: 55px 100.15px; /* Round top-right radius */
+        border-bottom-right-radius: 30.5px 50.5px; /* Round bottom-right radius */
+        background: #946d59;
+        box-shadow: -5px 10px 20px #ccc;
+        z-index: 2;
+     }
+
+    to{
+        content: "";
+        position: absolute;
+        height: 0px;
+        width: 90px;
+        top: 27px;
+        right: 20px;
+        border-top-left-radius: 25px 55px; /* Round top-left radius */
+        border-bottom-left-radius: 65px 85px; /* Round bottom-left radius */
+        border-top-right-radius: 55px 10.15px; /* Round top-right radius */
+        border-bottom-right-radius: 30.5px 50.5px; /* Round bottom-right radius */
+        background: #946d59;
+        box-shadow: -5px 10px 20px #ccc;
+        z-index: 2;
+    }
+  }
+
+
+
+
+.handle {
+  position: absolute;
+  height: 180px;
+  width: 170px;
+  top: 110px;
+  left: -115.5px;
+  border-top-left-radius: 110px 90px; 
+  border-bottom-left-radius: 150px 150px; 
+  border-top-right-radius: 90px 100px;
+  border-bottom-right-radius: 75px 10px;
+  background: linear-gradient(to left, #eee 0, white 100%);
+  background-color: white;
+  z-index: 1;
+  animation-delay: 15s !important;
+
+  animation: mycont2animation 9s forwards;
+
+}
+
+.handle:after {
+  content: "";
+  position: absolute;
+  height: 130px;
+  width: 90px;
+  top: 27px;
+  right: 20px;
+  border-top-left-radius: 45px 55px; /* Round top-left radius */
+  border-bottom-left-radius: 65px 85px; /* Round bottom-left radius */
+  border-top-right-radius: 55px 100.15px; /* Round top-right radius */
+  border-bottom-right-radius: 30.5px 50.5px; /* Round bottom-right radius */
+  background: #946d59;
+  box-shadow: -5px 10px 20px #ccc;
+  z-index: 2;
+  animation-delay: 15s !important;
+  animation: mycont3animation 6s forwards;
+
+}
